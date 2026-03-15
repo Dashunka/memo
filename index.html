@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Игра Мемори</title>
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Экран выбора количества игроков -->
+    <div id="setup-screen">
+        <h1>Мемо</h1>
+        <p>Выберите количество игроков:</p>
+        <div class="player-btn-group">
+            <button class="select-btn" data-players="1">1 Игрок</button>
+            <button class="select-btn" data-players="2">2 Игрока</button>
+            <button class="select-btn" data-players="3">3 Игрока</button>
+            <button class="select-btn" data-players="4">4 Игрока</button>
+        </div>
+        <button id="start-btn" disabled>Начать игру</button>
+    </div>
+
+    <!-- Основной игровой экран -->
+    <div id="game-screen">
+        <!-- Табло счета (как на эскизе) -->
+        <div class="scoreboard">
+            <div class="score-column left">
+                <div id="p1-score" class="player-score">Игрок 1: 0</div>
+                <div id="p3-score" class="player-score">Игрок 3: 0</div>
+            </div>
+            
+            <div class="turn-indicator" id="turn-display">
+                Ход: Игрок 1
+            </div>
+
+            <div class="score-column right">
+                <div id="p2-score" class="player-score">Игрок 2: 0</div>
+                <div id="p4-score" class="player-score">Игрок 4: 0</div>
+            </div>
+        </div>
+
+        <!-- Сетка карточек -->
+        <div class="grid-container" id="grid">
+            <!-- Карточки будут созданы через JS -->
+        </div>
+    </div>
+
+    <!-- Всплывающее окно (Модальное окно) -->
+    <div id="modal-overlay">
+        <div class="modal-content">
+            <img src="" alt="Найденная пара" id="modal-img">
+            <h2 id="modal-desc">Описание</h2>
+            <p class="modal-hint">Нажмите, чтобы продолжить</p>
+        </div>
+    </div>
+
+    <!-- Подключаем скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
